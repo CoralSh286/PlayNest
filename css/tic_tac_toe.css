@@ -1,0 +1,193 @@
+body {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-family: "Parkinsans", sans-serif;
+  margin: 0;
+  background-image: url(/imajes/img.jpg);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  overflow: hidden;
+}
+
+h1 {
+  margin: 20px 0;
+  color: #fff;
+}
+
+#backButton {
+  position: absolute;
+  text-decoration: none;
+  top: 5%;
+  left: 5%;
+  background-color: #007bff;
+  color: white;
+  font-size: 18px;
+  padding: 10px 30px;
+  padding-left: 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+  transition: all 0.3s ease;
+}
+
+#backButton:hover {
+  background-color: #0056b3;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+
+#board {
+  display: grid;
+  grid-template-columns: repeat(3, 150px);
+  grid-gap: 20px;
+  row-gap: 30px;
+  justify-content: center;
+}
+
+.cell {
+  color: #fff;
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid #ddd;
+  font-size: 48px;
+  line-height: 160px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, transform 0.1s;
+}
+
+.cell.taken {
+  cursor: not-allowed;
+}
+
+#status {
+  margin: 20px;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+#startButton {
+  border-radius: 8px;
+  position: absolute;
+  font-size: 1.3rem;
+  padding: 10px 30px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: inline-block; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+  transition: all 0.3s ease;
+}
+
+#startButton:hover {
+  background-color: #0f8a47;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+#startButton.hidden {
+  display: none;
+}
+
+#winnerMessage {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(26, 1, 32, 0.9);
+  color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  font-size: 3rem;
+  display: none;
+  z-index: 10;
+}
+
+
+@media (max-width: 768px) {
+  #board {
+    grid-template-columns: repeat(3, 100px); 
+    grid-gap: 15px;
+    row-gap: 20px;
+  }
+
+  .cell {
+    width: 100px;
+    height: 100px;
+    font-size: 32px;
+    line-height: 110px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  #status {
+    font-size: 1.2rem;
+  }
+
+  #backButton {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+
+  #startButton {
+    font-size: 1rem;
+    padding: 8px 20px;
+  }
+
+  #winnerMessage {
+    font-size: 2rem;
+    padding: 20px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  #board {
+    grid-template-columns: repeat(3, 80px);
+    grid-gap: 10px;
+    row-gap: 15px;
+  }
+
+  .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 24px;
+    line-height: 90px;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  #status {
+    font-size: 1rem;
+  }
+
+  #backButton {
+    font-size: 1rem;
+    padding: 15px 20px;
+  }
+
+  #startButton{
+    padding: 15px 15px;
+    font-size: 1rem;
+  }
+
+  #winnerMessage {
+    font-size: 1.5rem;
+    padding: 15px;
+  }
+}

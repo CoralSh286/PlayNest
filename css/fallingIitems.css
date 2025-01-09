@@ -1,0 +1,232 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Parkinsans", sans-serif;
+}
+
+body {
+  background-color: #9042c9; 
+  width: 100%;
+  overflow: hidden;
+}
+
+#header {
+  width: 100%;
+  height: 60vh;
+  background-image: 
+        linear-gradient(to bottom, rgba(144, 66, 201, 0) 70%, #9042c9), 
+        url(/imajes/img.2.jpg);
+  background-size: cover;
+  background-position: center;
+  
+}
+
+#game-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#catcher {
+  position: absolute;
+  bottom: 20px;
+  width: 100px;
+  height: 20px;
+  background-color: #feacff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+
+}
+
+.item {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #e1b8e5;
+  border-radius: 50%;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.6); 
+  animation: fall 3s linear infinite, sparkle 1.5s alternate infinite; 
+}
+
+@keyframes fall {
+  0% {
+    top: -20px;
+  }
+  100% {
+    top: 100vh;
+  }
+}
+
+
+#scoreboard {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: white;
+  font-size: 2rem;
+  z-index: 10;
+}
+
+
+#lives {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  font-size: 30px;
+  z-index: 10;
+}
+
+
+#game-over {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 48px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-image: linear-gradient(to bottom, rgba(243, 19, 19, 0.6), rgba(0, 0, 0, 0.6));
+  padding: 30px 50px;
+  border-radius: 15px;
+  display: none;
+  z-index: 15;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); 
+  animation: fadeIn 1s ease-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -60%); 
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+#back-button {
+  position: absolute;
+  text-decoration: none;
+  top: 10%; 
+  left: 20px; 
+  background-color: #007bff;
+  color: white;
+  font-size: 18px;
+  padding: 10px 30px;
+  padding-left: 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); 
+  transition: all 0.3s ease;
+}
+
+#back-button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+}
+
+
+
+#difficulty-buttons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.difficulty-button {
+  background-color: #007bff;
+  color: white;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease; 
+}
+
+.difficulty-button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 4px 6px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.difficulty-button:active {
+  background-color: #003f7f;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+}
+
+#start-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #28a745;
+  color: white;
+  font-size: 24px;
+  border: none;
+  border-radius: 15px;
+  padding: 15px 30px;
+  cursor: pointer;
+  display: none;
+  z-index: 10;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+#start-button:hover {
+  background-color: #218838;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+#start-button:active {
+  background-color: #1e7e34;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: translate(-50%, -50%);
+}
+
+@media (min-width: 541px) and (max-width: 1025px){
+  .difficulty-button{
+    padding: 15px 20px;
+    font-size: 1.5rem;
+  }
+
+  #start-button{
+    padding: 15px 20px;
+    font-size: 1.5rem;
+  }
+
+  #back-button{
+    padding: 15px 20px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 0) and (max-width: 540px){
+  #game-over {
+    position: absolute;
+    top: 30%;
+    padding: 10px 10px;
+  }
+
+  #start-button{
+    padding: 15px 20px;
+    font-size: 1rem;
+  }
+}
+
