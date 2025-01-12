@@ -89,11 +89,7 @@ function getUserData() {
       if (topTicTacToeUser) {
         document.getElementById("Tic-Tac-Toe-name").textContent = `Top Player: ${topTicTacToeUser}`;
         document.getElementById("Tic-Tac-Toe-wins-global").innerHTML = `Wins: ${topTicTacToeWins}`;
-      } else {
-        document.getElementById("Tic-Tac-Toe-name").textContent = "Top Player: N/A";
-        document.getElementById("Tic-Tac-Toe-wins-global").textContent = "Wins: N/A";
       }
-
   }
   
   /** 
